@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Calculadora en explorador</title>
+    <style>
+        body{
+            background-image: url("https://neliosoftware.com/es/wp-content/uploads/sites/3/2018/07/aziz-acharki-549137-unsplash-1200x775.jpg");
+        }
+        h1{
+            text-align: center;
+            font-family: 'Gill Sans';
+        }
+        #resultado {
+            height: 70px;
+            width: 250px;
+        }
+        #cuadro{
+            height: 50px;
+            width: 50px;
+        }
+        #cuadro:hover{
+            background-color: aqua;
+            color: red;
+        }
+    
+        </style>
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <center>
+    <table border="4">
+        <tr>
+            <td colspan="4"> 
+            <form name="calculadora">
+                <input type="text" id="resultado" maxlength="20" value="" readonly="true" name="input">
+            <br> 
+        </td>
+        </tr>
+        <tr>
+        <td><input type="button" id="cuadro" name="one"    value="1"   onclick="calculadora.input.value += '1'"></td>
+        <td><input type="button" id="cuadro"  name="two"    value="2"   onclick="calculadora.input.value += '2'"></td>
+        <td> <input type="button" id="cuadro"  name="three"  value="3"   onclick="calculadora.input.value += '3'"></td>
+        <td><input type="button" id="cuadro"  name="plus"   value="+"   onclick="calculadora.input.value += '+'"></td>
+                </tr>
+                <br>
+        <tr>
+        <td><input type="button" id="cuadro"  name="four"   value="4"   onclick="calculadora.input.value +='4'"></td>
+        <td><input type="button" id="cuadro"  name="five"   value="5"   onclick="calculadora.input.value +='5'"></td>
+        <td><input type="button" id="cuadro"  name="six"    value="6"   onclick="calculadora.input.value +='6'"></td>
+        <td><input type="button" id="cuadro"  name="minus"  value="-"   onclick="calculadora.input.value +='-'"></td>
+                </tr>
+                <br>
+        <tr>
+        <td><input type="button" id="cuadro"  name="seven"  value="7"   onclick="calculadora.input.value +='7'"></td>
+        <td><input type="button" id="cuadro"  name="eight"  value="8"   onclick="calculadora.input.value +='8'"></td>
+        <td><input type="button" id="cuadro"  name="nine"   value="9"   onclick="calculadora.input.value +='9'"></td>
+        <td><input type="button" id="cuadro"  name="times"  value="X"   onclick="calculadora.input.value +='*'"></td>
+    </tr>
+                <br>
+        <tr>
+        <td><input type="button" id="cuadro"  name="sroot"    value="√"     onclick="raizc()"></td>
+        <td><input type="button" id="cuadro"  name="cosine"   value="cos"   onclick="cos()"></td>
+        <td><input type="button" id="cuadro"  name="tan"      value="tan"   onclick="tangent()"></td>
+        <td><input type="button" id="cuadro"  name="sine"     value="sen"   onclick="sen()"></td>
+        <td><input type="button" id="cuadro"  name="pow"      value="^"     onclick="potency()"></td>
+    </tr>
+                
+                <br>
+        <tr>
+        <td><input type="button" id="cuadro"  name="zero"   value="0"   onclick="calculadora.input.value +='0'"></td>
+        <td><input type="button" id="cuadro"  name="DoIt"   value="="   onclick="calculadora.input.value = eval(calculadora.input.value)"></td>
+        <td><input type="button" id="cuadro"  name="div"    value="/"   onclick="calculadora.input.value +='/'"></td>
+        <td><input type="reset"  id="cuadro"  name="resetear" value="clear" onclick="calculadora.input.value = ''" ></td>
+        </tr>
+    </table>
+    </center>
+    </form>
+
+    <script type="text/javascript">
+        function raizc(){
+            var r = document.getElementById('resultado').value;
+            var x = Math.sqrt(r)
+            calculadora.resultado.value=x;
+        }
+        function potency(){
+            var e = document.getElementById('resultado').value;
+            var p = Math.pow(e,2)
+            calculadora.resultado.value=p;
+        }
+        function tangent(){
+        var t = document.getElementById("resultado").value;
+        var prueba= Math.tan(t, 1)
+        calculadora.resultado.value= prueba;
+        }
+        function cos(){
+        var c = document.getElementById("resultado").value;
+        var prueba= Math.cos(c,10)
+        calculadora.resultado.value= prueba;
+        }
+        function sen(){
+        var s = document.getElementById("resultado").value;
+        var prueba= Math.sin(s,2)
+        calculadora.resultado.value= prueba;
+        }
+        </script>
+</body>
+</html>
